@@ -1,0 +1,1550 @@
+[
+    {
+        "timestamp": "2026-09-29T07:05:32.264741",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:05:32.279268",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:05:32.310988",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_trend": "positive",
+            "market_volatility": "moderate",
+            "market_signal": "favorable"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:05:32.339598",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:05:32.366671",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:05:32.404542",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_level": "moderate",
+            "portfolio_exposure": "acceptable",
+            "risk_alert": false
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:05:32.485054",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.218764",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.226560",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.262651",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.035704
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.273499",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.286251",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.309175",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.022897
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.342833",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.386879",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.413988",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.435724",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.02173
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.456347",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.481942",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.501647",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.019698
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.521077",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.540764",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.560029",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.581979",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.021941
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.600099",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.623584",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.644595",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.021032
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.685238",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.708048",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.731839",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.750524",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.018713
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.774755",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.788011",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.814893",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.026863
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.848129",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.871169",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.892344",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.913553",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.021202
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.936575",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.958542",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:36.981681",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.023127
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.010515",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.032804",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.059547",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.082721",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.02316
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.102091",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.122981",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.141825",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.018838
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.167225",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.183482",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.207254",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.228193",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.020922
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.255080",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.273118",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.293002",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.019875
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.324830",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.354505",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.381031",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.409615",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.028583
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.448186",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.474075",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.494637",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.02055
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.518358",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.540039",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.558166",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.579765",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.021574
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.606424",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.641894",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.691518",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.04961
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.727562",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.759218",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.788398",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.810682",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.022277
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.838935",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.869349",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.896891",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.02753
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.936109",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.970154",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:37.998087",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.024865",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.026762
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.038012",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.058991",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.081208",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.022203
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.103842",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.127575",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.156813",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.186087",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.029233
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.213396",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.239897",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.268305",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.0284
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.294126",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.320472",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.343385",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.384154",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.040753
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.426471",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.460485",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.485976",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.025487
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.508177",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.534570",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.557045",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.582947",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.025894
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.603595",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.649528",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.674396",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.024854
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.697082",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.726348",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.754406",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.779892",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.025463
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.813378",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.840014",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.879768",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.039729
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.902518",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.925383",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.955057",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:38.987043",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.031978
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.023322",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.058906",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.083748",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.024875
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.105510",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.154222",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.182974",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.212711",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.029726
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.236752",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.258747",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.285198",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.026443
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.312636",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.339919",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.382597",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.419658",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.03706
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.457364",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.506540",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.531326",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.024781
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.570881",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.605501",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.629356",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.664324",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.034946
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.692251",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.725168",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.751848",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.026653
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.778937",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.803929",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_market_analysis",
+        "target": "MA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.824233",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_started",
+        "target": "Market Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.848193",
+        "agent_id": "MA-01",
+        "role": "Market Analyst",
+        "action": "market_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "market_data": {
+                "market_trend": "positive",
+                "market_volatility": "moderate",
+                "market_signal": "favorable"
+            },
+            "response_time": 0.023947
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.874529",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "request_risk_analysis",
+        "target": "RA-01",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:39.985099",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_started",
+        "target": "Portfolio Data",
+        "details": null
+    },
+    {
+        "timestamp": "2026-09-29T07:09:40.087786",
+        "agent_id": "RA-01",
+        "role": "Risk Analyst",
+        "action": "risk_analysis_completed",
+        "target": "PM-01",
+        "details": {
+            "risk_data": {
+                "risk_level": "moderate",
+                "portfolio_exposure": "acceptable",
+                "risk_alert": false
+            },
+            "response_time": 0.102676
+        }
+    },
+    {
+        "timestamp": "2026-09-29T07:09:40.140287",
+        "agent_id": "PM-01",
+        "role": "Portfolio Manager",
+        "action": "portfolio_decision",
+        "target": "SYSTEM",
+        "details": {
+            "market_signal": "favorable",
+            "risk_level": "moderate",
+            "decision": "Proceed with portfolio allocation"
+        }
+    }
+]
