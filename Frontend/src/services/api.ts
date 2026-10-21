@@ -1,4 +1,3 @@
-
 import type { Agent, HealthResponse } from "../types";
 
 export const API_BASE =
@@ -9,7 +8,7 @@ async function fetchJSON<T>(endpoint: string): Promise<T> {
 
   if (!response.ok) {
     throw new Error(
-      `Backend request failed: ${endpoint} (HTTP ${response.status})`
+      `Backend request failed: ${endpoint} (HTTP ${response.status})`,
     );
   }
 
@@ -35,7 +34,7 @@ export async function getAgents(): Promise<Agent[]> {
 
   if (records.length === 0) {
     throw new Error(
-      "No agent records found in the /agents response. Check the API response."
+      "No agent records found in the /agents response. Check the API response.",
     );
   }
 
@@ -43,16 +42,17 @@ export async function getAgents(): Promise<Agent[]> {
     const record = item as Record<string, unknown>;
 
     const agentId = String(
-      record.agent_id ?? record.agentId ?? record.id ?? `AGENT-${index + 1}`
+      record.agent_id ?? record.agentId ?? record.id ?? `AGENT-${index + 1}`,
     );
 
     const rawStatus = String(
-      record.status ?? record.raw_status ?? record.state ?? "UNKNOWN"
+      record.status ?? record.raw_status ?? record.state ?? "UNKNOWN",
     );
 
     const status = rawStatus.toUpperCase();
 
     return {
+      id: agentId,
       agent_id: agentId,
       name: String(record.name ?? agentId),
       role: String(record.role ?? ""),
@@ -60,9 +60,7 @@ export async function getAgents(): Promise<Agent[]> {
       raw_status: String(record.raw_status ?? rawStatus),
       designation: String(record.designation ?? ""),
       warn_count: Number(record.warn_count ?? record.total_warnings ?? 0),
-      total_warnings: Number(
-        record.total_warnings ?? record.warn_count ?? 0
-      ),
+      total_warnings: Number(record.total_warnings ?? record.warn_count ?? 0),
       total_quarantines: Number(record.total_quarantines ?? 0),
       is_active_backup: Boolean(record.is_active_backup ?? false),
       available:

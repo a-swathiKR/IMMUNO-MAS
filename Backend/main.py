@@ -6,7 +6,7 @@ from agents.agent_manager import AgentManager
 
 
 app = FastAPI(
-    title="AI-DNA SHIELD",
+    title="IMMUNO-MAS",
     description=(
         "Multi-Agent System with Behavioral Fingerprinting, "
         "Anomaly Detection, and Cyber Resilience (Absorb → Adapt → Recover)."
@@ -14,6 +14,13 @@ app = FastAPI(
     version="2.0.0",
 )
 
+@app.get("/health")
+def health_check():
+    return {
+        "status": "healthy",
+        "message": "IMMUNO-MAS backend is running"
+    }
+    
 manager = AgentManager(
     warn_threshold=2,          # warnings before quarantine
     recovery_cooldown_s=60.0,  # seconds before auto-recovery

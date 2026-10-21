@@ -1,5 +1,5 @@
-```ts
 export interface Agent {
+  id: string;
   agent_id: string;
   name: string;
   role: string;
@@ -21,4 +21,3 @@ export interface HealthResponse {
   timestamp?: string;
   [key: string]: unknown;
 }
-```

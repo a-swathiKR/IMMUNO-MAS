@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from "react";
 import {
   Activity,
   Shield,
@@ -7,7 +7,6 @@ import {
   Fingerprint,
   AlertTriangle,
   RefreshCw,
-  GitBranch,
   ScrollText,
   Settings,
   Bell,
@@ -25,47 +24,46 @@ import {
   WifiOff,
   ChevronRight,
   LockKeyhole,
-} from 'lucide-react'
+} from "lucide-react";
 
-const API_BASE =
-  import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000'
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
 type Agent = {
-  agent_id: string
-  name: string
-  role: string
-  status: string
-  raw_status: string
-  designation: string
-  warn_count: number
-  total_warnings: number
-  total_quarantines: number
-  is_active_backup: boolean
-  available: boolean
-}
+  agent_id: string;
+  name: string;
+  role: string;
+  status: string;
+  raw_status: string;
+  designation: string;
+  warn_count: number;
+  total_warnings: number;
+  total_quarantines: number;
+  is_active_backup: boolean;
+  available: boolean;
+};
 
 type HealthResponse = {
-  status: string
-  timestamp?: string
-  version?: string
-  system?: string
-}
+  status: string;
+  timestamp?: string;
+  version?: string;
+  system?: string;
+};
 
 type NavigationItem = {
-  label: string
-  icon: typeof LayoutDashboard
-}
+  label: string;
+  icon: typeof LayoutDashboard;
+};
 
 const navigation: NavigationItem[] = [
-  { label: 'Overview', icon: LayoutDashboard },
-  { label: 'Agent Management', icon: Bot },
-  { label: 'Behavioral Monitoring', icon: Fingerprint },
-  { label: 'Threat Detection', icon: AlertTriangle },
-  { label: 'Cyber Resilience', icon: ShieldCheck },
-  { label: 'Failover & Recovery', icon: RefreshCw },
-  { label: 'Audit Logs', icon: ScrollText },
-  { label: 'Settings', icon: Settings },
-]
+  { label: "Overview", icon: LayoutDashboard },
+  { label: "Agent Management", icon: Bot },
+  { label: "Behavioral Monitoring", icon: Fingerprint },
+  { label: "Threat Detection", icon: AlertTriangle },
+  { label: "Cyber Resilience", icon: ShieldCheck },
+  { label: "Failover & Recovery", icon: RefreshCw },
+  { label: "Audit Logs", icon: ScrollText },
+  { label: "Settings", icon: Settings },
+];
 
 function readString(
   item: Record<string, unknown>,
@@ -73,153 +71,141 @@ function readString(
   fallback: string,
 ): string {
   for (const key of keys) {
-    const value = item[key]
-    if (typeof value === 'string' && value.trim()) return value
+    const value = item[key];
+    if (typeof value === "string" && value.trim()) return value;
   }
-  return fallback
+  return fallback;
 }
 
-function readNumber(
-  item: Record<string, unknown>,
-  keys: string[],
-): number {
+function readNumber(item: Record<string, unknown>, keys: string[]): number {
   for (const key of keys) {
-    const value = item[key]
-    if (typeof value === 'number' && Number.isFinite(value)) return value
+    const value = item[key];
+    if (typeof value === "number" && Number.isFinite(value)) return value;
   }
-  return 0
+  return 0;
 }
 
-function readBoolean(
-  item: Record<string, unknown>,
-  keys: string[],
-): boolean {
+function readBoolean(item: Record<string, unknown>, keys: string[]): boolean {
   for (const key of keys) {
-    const value = item[key]
-    if (typeof value === 'boolean') return value
+    const value = item[key];
+    if (typeof value === "boolean") return value;
   }
-  return false
+  return false;
 }
 
 function normalizeAgent(value: unknown, index: number): Agent {
   const item =
-    value && typeof value === 'object'
+    value && typeof value === "object"
       ? (value as Record<string, unknown>)
-      : {}
+      : {};
 
   const agentId = readString(
     item,
-    ['agent_id', 'id', 'agentId', 'name'],
+    ["agent_id", "id", "agentId", "name"],
     `Agent ${index + 1}`,
-  )
+  );
 
   const rawStatus = readString(
     item,
-    ['raw_status', 'status', 'state'],
-    'UNKNOWN',
-  )
+    ["raw_status", "status", "state"],
+    "UNKNOWN",
+  );
 
-  const status = rawStatus.toUpperCase()
+  const status = rawStatus.toUpperCase();
 
   return {
     agent_id: agentId,
-    name: readString(item, ['name', 'agent_name', 'display_name'], agentId),
+    name: readString(item, ["name", "agent_name", "display_name"], agentId),
     role: readString(
       item,
-      ['role', 'description', 'agent_type', 'type'],
-      'Autonomous agent',
+      ["role", "description", "agent_type", "type"],
+      "Autonomous agent",
     ),
     status: rawStatus,
     raw_status: rawStatus,
     designation: readString(
       item,
-      ['designation', 'agent_designation', 'category'],
-      agentId.toUpperCase().includes('BACKUP') ||
-        agentId.toUpperCase().endsWith('-02')
-        ? 'BACKUP'
-        : 'PRIMARY',
+      ["designation", "agent_designation", "category"],
+      agentId.toUpperCase().includes("BACKUP") ||
+        agentId.toUpperCase().endsWith("-02")
+        ? "BACKUP"
+        : "PRIMARY",
     ),
-    warn_count: readNumber(item, ['warn_count', 'warning_count']),
+    warn_count: readNumber(item, ["warn_count", "warning_count"]),
     total_warnings: readNumber(item, [
-      'total_warnings',
-      'warning_count',
-      'warn_count',
+      "total_warnings",
+      "warning_count",
+      "warn_count",
     ]),
     total_quarantines: readNumber(item, [
-      'total_quarantines',
-      'quarantine_count',
+      "total_quarantines",
+      "quarantine_count",
     ]),
-    is_active_backup: readBoolean(item, ['is_active_backup']),
+    is_active_backup: readBoolean(item, ["is_active_backup"]),
     available:
-      typeof item.available === 'boolean'
+      typeof item.available === "boolean"
         ? item.available
-        : ['HEALTHY', 'ACTIVE', 'ONLINE', 'STANDBY'].includes(status),
-  }
+        : ["HEALTHY", "ACTIVE", "ONLINE", "STANDBY"].includes(status),
+  };
 }
 
 function getStatusStyle(status: string) {
-  const normalized = status.toUpperCase()
+  const normalized = status.toUpperCase();
 
   if (
-    ['HEALTHY', 'ACTIVE', 'ONLINE', 'CONNECTED', 'OPERATIONAL'].includes(
+    ["HEALTHY", "ACTIVE", "ONLINE", "CONNECTED", "OPERATIONAL"].includes(
       normalized,
     )
   ) {
     return {
-      color: 'text-emerald-300',
-      background: 'bg-emerald-400/10',
-      dot: 'bg-emerald-400',
-    }
+      color: "text-emerald-300",
+      background: "bg-emerald-400/10",
+      dot: "bg-emerald-400",
+    };
   }
 
-  if (
-    ['STANDBY', 'IDLE', 'READY'].includes(normalized)
-  ) {
+  if (["STANDBY", "IDLE", "READY"].includes(normalized)) {
     return {
-      color: 'text-sky-300',
-      background: 'bg-sky-400/10',
-      dot: 'bg-sky-400',
-    }
+      color: "text-sky-300",
+      background: "bg-sky-400/10",
+      dot: "bg-sky-400",
+    };
   }
 
-  if (
-    ['WARNING', 'DEGRADED', 'SUSPECT', 'RECOVERING'].includes(normalized)
-  ) {
+  if (["WARNING", "DEGRADED", "SUSPECT", "RECOVERING"].includes(normalized)) {
     return {
-      color: 'text-amber-300',
-      background: 'bg-amber-400/10',
-      dot: 'bg-amber-400',
-    }
+      color: "text-amber-300",
+      background: "bg-amber-400/10",
+      dot: "bg-amber-400",
+    };
   }
 
-  if (
-    ['QUARANTINED', 'FAILED', 'OFFLINE', 'ERROR'].includes(normalized)
-  ) {
+  if (["QUARANTINED", "FAILED", "OFFLINE", "ERROR"].includes(normalized)) {
     return {
-      color: 'text-rose-300',
-      background: 'bg-rose-400/10',
-      dot: 'bg-rose-400',
-    }
+      color: "text-rose-300",
+      background: "bg-rose-400/10",
+      dot: "bg-rose-400",
+    };
   }
 
   return {
-    color: 'text-slate-300',
-    background: 'bg-slate-400/10',
-    dot: 'bg-slate-400',
-  }
+    color: "text-slate-300",
+    background: "bg-slate-400/10",
+    dot: "bg-slate-400",
+  };
 }
 
 function StatusBadge({ status }: { status: string }) {
-  const style = getStatusStyle(status)
+  const style = getStatusStyle(status);
 
   return (
     <span
       className={`inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-xs font-medium ${style.color} ${style.background}`}
     >
       <span className={`h-1.5 w-1.5 rounded-full ${style.dot}`} />
-      {status.replaceAll('_', ' ')}
+      {status.replaceAll("_", " ")}
     </span>
-  )
+  );
 }
 
 function MetricCard({
@@ -229,11 +215,11 @@ function MetricCard({
   icon: Icon,
   accent,
 }: {
-  title: string
-  value: string
-  subtitle: string
-  icon: typeof Activity
-  accent: string
+  title: string;
+  value: string;
+  subtitle: string;
+  icon: typeof Activity;
+  accent: string;
 }) {
   return (
     <div className="rounded-2xl border border-white/[0.07] bg-[#101621] p-5 transition-colors hover:border-white/[0.13]">
@@ -250,109 +236,109 @@ function MetricCard({
       </div>
       <p className="mt-4 text-xs text-slate-500">{subtitle}</p>
     </div>
-  )
+  );
 }
 
 function App() {
-  const [activePage, setActivePage] = useState('Overview')
-  const [sidebarOpen, setSidebarOpen] = useState(true)
-  const [agents, setAgents] = useState<Agent[]>([])
-  const [health, setHealth] = useState<HealthResponse | null>(null)
-  const [apiError, setApiError] = useState('')
-  const [loading, setLoading] = useState(true)
-  const [lastUpdated, setLastUpdated] = useState<string | null>(null)
+  const [activePage, setActivePage] = useState("Overview");
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [agents, setAgents] = useState<Agent[]>([]);
+  const [health, setHealth] = useState<HealthResponse | null>(null);
+  const [apiError, setApiError] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 
   const loadBackendData = useCallback(async (signal?: AbortSignal) => {
-    setLoading(true)
-    setApiError('')
+    setLoading(true);
+    setApiError("");
 
     try {
       const [agentsResponse, healthResponse] = await Promise.all([
         fetch(`${API_BASE}/agents`, { signal }),
         fetch(`${API_BASE}/health`, { signal }),
-      ])
+      ]);
 
       if (!agentsResponse.ok) {
-        throw new Error(`/agents returned HTTP ${agentsResponse.status}`)
+        throw new Error(`/agents returned HTTP ${agentsResponse.status}`);
       }
 
       if (!healthResponse.ok) {
-        throw new Error(`/health returned HTTP ${healthResponse.status}`)
+        throw new Error(`/health returned HTTP ${healthResponse.status}`);
       }
 
-      const agentData: unknown = await agentsResponse.json()
-      const healthData: HealthResponse = await healthResponse.json()
+      const agentData: unknown = await agentsResponse.json();
+      const healthData: HealthResponse = await healthResponse.json();
 
-      let agentList: unknown[] = []
+      let agentList: unknown[] = [];
 
       if (Array.isArray(agentData)) {
-        agentList = agentData
+        agentList = agentData;
       } else if (
         agentData &&
-        typeof agentData === 'object' &&
-        'agents' in agentData &&
+        typeof agentData === "object" &&
+        "agents" in agentData &&
         Array.isArray((agentData as { agents: unknown[] }).agents)
       ) {
-        agentList = (agentData as { agents: unknown[] }).agents
+        agentList = (agentData as { agents: unknown[] }).agents;
       }
 
-      setAgents(agentList.map(normalizeAgent))
-      setHealth(healthData)
-      setLastUpdated(new Date().toLocaleTimeString())
+      setAgents(agentList.map(normalizeAgent));
+      setHealth(healthData);
+      setLastUpdated(new Date().toLocaleTimeString());
     } catch (error) {
-      if (error instanceof Error && error.name !== 'AbortError') {
+      if (error instanceof Error && error.name !== "AbortError") {
         setApiError(
           `${error.message}. Check that the FastAPI backend is running at ${API_BASE}.`,
-        )
+        );
       }
     } finally {
       if (!signal?.aborted) {
-        setLoading(false)
+        setLoading(false);
       }
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    const controller = new AbortController()
-    void loadBackendData(controller.signal)
+    const controller = new AbortController();
+    void loadBackendData(controller.signal);
 
-    return () => controller.abort()
-  }, [loadBackendData])
+    return () => controller.abort();
+  }, [loadBackendData]);
 
   const healthyCount = agents.filter((agent) =>
-    ['HEALTHY', 'ACTIVE', 'ONLINE', 'OPERATIONAL'].includes(
+    ["HEALTHY", "ACTIVE", "ONLINE", "OPERATIONAL"].includes(
       agent.status.toUpperCase(),
     ),
-  ).length
+  ).length;
 
   const backupCount = agents.filter(
     (agent) =>
-      agent.designation.toUpperCase().includes('BACKUP') ||
-      agent.agent_id.toUpperCase().endsWith('-02'),
-  ).length
+      agent.designation.toUpperCase().includes("BACKUP") ||
+      agent.agent_id.toUpperCase().endsWith("-02"),
+  ).length;
 
   const warningCount = agents.reduce(
     (total, agent) => total + agent.total_warnings,
     0,
-  )
+  );
 
   const quarantineCount = agents.reduce(
     (total, agent) => total + agent.total_quarantines,
     0,
-  )
+  );
 
   const backendOnline =
-    health?.status?.toUpperCase() === 'ONLINE' ||
-    health?.status?.toUpperCase() === 'HEALTHY'
+    health?.status?.toUpperCase() === "ONLINE" ||
+    health?.status?.toUpperCase() === "HEALTHY";
 
-  const showOverview = activePage === 'Overview'
+  const showOverview = activePage === "Overview";
 
   return (
     <div className="flex min-h-screen bg-[#080b12] text-slate-100">
       {/* Sidebar */}
       <aside
         className={`${
-          sidebarOpen ? 'w-64' : 'w-[76px]'
+          sidebarOpen ? "w-64" : "w-[76px]"
         } fixed inset-y-0 left-0 z-30 flex flex-col border-r border-white/[0.07] bg-[#0b1019] transition-all duration-200 lg:sticky lg:top-0 lg:h-screen`}
       >
         <div className="flex h-[76px] items-center gap-3 border-b border-white/[0.07] px-5">
@@ -380,8 +366,8 @@ function App() {
 
           <nav className="space-y-1">
             {navigation.map((item) => {
-              const Icon = item.icon
-              const active = activePage === item.label
+              const Icon = item.icon;
+              const active = activePage === item.label;
 
               return (
                 <button
@@ -390,8 +376,8 @@ function App() {
                   title={!sidebarOpen ? item.label : undefined}
                   className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm transition-colors ${
                     active
-                      ? 'border border-cyan-300/15 bg-cyan-300/10 text-cyan-200'
-                      : 'border border-transparent text-slate-400 hover:bg-white/[0.04] hover:text-slate-200'
+                      ? "border border-cyan-300/15 bg-cyan-300/10 text-cyan-200"
+                      : "border border-transparent text-slate-400 hover:bg-white/[0.04] hover:text-slate-200"
                   }`}
                 >
                   <Icon size={18} className="shrink-0" />
@@ -402,7 +388,7 @@ function App() {
                     </>
                   )}
                 </button>
-              )
+              );
             })}
           </nav>
         </div>
@@ -420,11 +406,13 @@ function App() {
               <div className="mt-3 flex items-center gap-2">
                 <span
                   className={`h-1.5 w-1.5 rounded-full ${
-                    backendOnline ? 'bg-emerald-400' : 'bg-slate-500'
+                    backendOnline ? "bg-emerald-400" : "bg-slate-500"
                   }`}
                 />
                 <span className="text-[10px] text-slate-500">
-                  {backendOnline ? 'Backend connected' : 'Connection unverified'}
+                  {backendOnline
+                    ? "Backend connected"
+                    : "Connection unverified"}
                 </span>
               </div>
             </div>
@@ -472,7 +460,7 @@ function App() {
                 <WifiOff size={14} className="text-slate-500" />
               )}
               <span className="text-xs text-slate-400">
-                {backendOnline ? 'API Online' : 'API Unverified'}
+                {backendOnline ? "API Online" : "API Unverified"}
               </span>
             </div>
             <button
@@ -481,10 +469,7 @@ function App() {
               title="Refresh backend data"
               className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-2.5 text-xs text-slate-300 transition-colors hover:bg-white/[0.07] disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <RefreshCw
-                size={14}
-                className={loading ? 'animate-spin' : ''}
-              />
+              <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
               <span className="hidden sm:inline">Refresh</span>
             </button>
             <button
@@ -506,28 +491,27 @@ function App() {
                 <span className="text-cyan-300">{activePage}</span>
               </div>
               <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                {showOverview ? 'System Overview' : activePage}
+                {showOverview ? "System Overview" : activePage}
               </h1>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
                 {showOverview
-                  ? 'Monitor agent availability and inspect the current status reported by your resilience backend.'
+                  ? "Monitor agent availability and inspect the current status reported by your resilience backend."
                   : `Explore the ${activePage.toLowerCase()} area of the AI-DNA SHIELD console.`}
               </p>
             </div>
 
             <div className="flex items-center gap-2 text-xs text-slate-500">
               <Clock3 size={14} />
-              {lastUpdated ? `Last updated ${lastUpdated}` : 'Waiting for backend data'}
+              {lastUpdated
+                ? `Last updated ${lastUpdated}`
+                : "Waiting for backend data"}
             </div>
           </div>
 
           {/* Backend error */}
           {apiError && (
             <div className="mb-6 flex flex-col gap-3 rounded-xl border border-rose-400/20 bg-rose-400/[0.06] p-4 sm:flex-row sm:items-start">
-              <CircleAlert
-                size={19}
-                className="shrink-0 text-rose-300"
-              />
+              <CircleAlert size={19} className="shrink-0 text-rose-300" />
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-medium text-rose-200">
                   Unable to load backend data
@@ -551,28 +535,42 @@ function App() {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 <MetricCard
                   title="Configured Agents"
-                  value={loading && agents.length === 0 ? '—' : String(agents.length).padStart(2, '0')}
+                  value={
+                    loading && agents.length === 0
+                      ? "—"
+                      : String(agents.length).padStart(2, "0")
+                  }
                   subtitle="Reported by the backend /agents endpoint"
                   icon={Bot}
                   accent="bg-cyan-400/10 text-cyan-300"
                 />
                 <MetricCard
                   title="Healthy Agents"
-                  value={loading && agents.length === 0 ? '—' : `${healthyCount}`.padStart(2, '0')}
+                  value={
+                    loading && agents.length === 0
+                      ? "—"
+                      : `${healthyCount}`.padStart(2, "0")
+                  }
                   subtitle="Currently reporting a healthy or active state"
                   icon={Activity}
                   accent="bg-emerald-400/10 text-emerald-300"
                 />
                 <MetricCard
                   title="Warnings"
-                  value={loading && agents.length === 0 ? '—' : String(warningCount)}
+                  value={
+                    loading && agents.length === 0 ? "—" : String(warningCount)
+                  }
                   subtitle="Sum of warning counters exposed by agents"
                   icon={AlertTriangle}
                   accent="bg-amber-400/10 text-amber-300"
                 />
                 <MetricCard
                   title="Quarantines"
-                  value={loading && agents.length === 0 ? '—' : String(quarantineCount)}
+                  value={
+                    loading && agents.length === 0
+                      ? "—"
+                      : String(quarantineCount)
+                  }
                   subtitle="Sum of quarantine counters exposed by agents"
                   icon={ShieldCheck}
                   accent="bg-violet-400/10 text-violet-300"
@@ -607,12 +605,12 @@ function App() {
                           AI-DNA SHIELD
                         </p>
                         <p className="mt-1 text-xs text-slate-500">
-                          {health?.system || 'Resilience backend'}
+                          {health?.system || "Resilience backend"}
                         </p>
                       </div>
                       <span
                         className={`h-2 w-2 rounded-full ${
-                          backendOnline ? 'bg-emerald-400' : 'bg-slate-500'
+                          backendOnline ? "bg-emerald-400" : "bg-slate-500"
                         }`}
                       />
                     </div>
@@ -689,7 +687,9 @@ function App() {
                       {health ? (
                         <StatusBadge status={health.status} />
                       ) : (
-                        <StatusBadge status={loading ? 'CHECKING' : 'UNKNOWN'} />
+                        <StatusBadge
+                          status={loading ? "CHECKING" : "UNKNOWN"}
+                        />
                       )}
                     </div>
                     <p className="mt-3 break-all text-xs leading-5 text-slate-500">
@@ -703,15 +703,17 @@ function App() {
                         API response
                       </span>
                       <span className="text-xs text-slate-300">
-                        {health ? 'Received' : loading ? 'Checking…' : 'Unavailable'}
+                        {health
+                          ? "Received"
+                          : loading
+                            ? "Checking…"
+                            : "Unavailable"}
                       </span>
                     </div>
                     <div className="flex items-center justify-between gap-3">
-                      <span className="text-xs text-slate-400">
-                        Version
-                      </span>
+                      <span className="text-xs text-slate-400">Version</span>
                       <span className="text-xs text-slate-300">
-                        {health?.version || 'Not reported'}
+                        {health?.version || "Not reported"}
                       </span>
                     </div>
                     <div className="flex items-center justify-between gap-3">
@@ -719,7 +721,7 @@ function App() {
                         Backup agents
                       </span>
                       <span className="text-xs text-slate-300">
-                        {agents.length ? backupCount : '—'}
+                        {agents.length ? backupCount : "—"}
                       </span>
                     </div>
                   </div>
@@ -739,8 +741,8 @@ function App() {
                       )}
                       <p className="text-xs leading-5 text-slate-400">
                         {health
-                          ? 'Health data was received from the backend. This does not by itself verify every resilience feature.'
-                          : 'The dashboard is waiting for a successful health response.'}
+                          ? "Health data was received from the backend. This does not by itself verify every resilience feature."
+                          : "The dashboard is waiting for a successful health response."}
                       </p>
                     </div>
                   </div>
@@ -860,7 +862,7 @@ function App() {
                   </p>
                   <span className="flex items-center gap-1.5 text-[11px] text-slate-500">
                     <Activity size={12} />
-                    {lastUpdated ? `Updated ${lastUpdated}` : 'Not yet updated'}
+                    {lastUpdated ? `Updated ${lastUpdated}` : "Not yet updated"}
                   </span>
                 </div>
               </section>
@@ -875,12 +877,12 @@ function App() {
                     </h3>
                   </div>
                   <p className="mt-3 text-xs leading-5 text-slate-500">
-                    Behavioral fingerprint data is available through the
-                    backend endpoint. Detailed metrics have not been loaded on
-                    this overview.
+                    Behavioral fingerprint data is available through the backend
+                    endpoint. Detailed metrics have not been loaded on this
+                    overview.
                   </p>
                   <button
-                    onClick={() => setActivePage('Behavioral Monitoring')}
+                    onClick={() => setActivePage("Behavioral Monitoring")}
                     className="mt-4 flex items-center gap-1.5 text-xs text-cyan-300 hover:text-cyan-200"
                   >
                     Open monitoring <ArrowUpRight size={13} />
@@ -899,7 +901,7 @@ function App() {
                     Detailed anomaly events are not shown in this overview.
                   </p>
                   <button
-                    onClick={() => setActivePage('Threat Detection')}
+                    onClick={() => setActivePage("Threat Detection")}
                     className="mt-4 flex items-center gap-1.5 text-xs text-cyan-300 hover:text-cyan-200"
                   >
                     Open threat detection <ArrowUpRight size={13} />
@@ -919,7 +921,7 @@ function App() {
                     verification.
                   </p>
                   <button
-                    onClick={() => setActivePage('Cyber Resilience')}
+                    onClick={() => setActivePage("Cyber Resilience")}
                     className="mt-4 flex items-center gap-1.5 text-xs text-cyan-300 hover:text-cyan-200"
                   >
                     Open resilience <ArrowUpRight size={13} />
@@ -934,9 +936,9 @@ function App() {
                 {(() => {
                   const item = navigation.find(
                     (entry) => entry.label === activePage,
-                  )
-                  const Icon = item?.icon ?? LayoutDashboard
-                  return <Icon size={23} />
+                  );
+                  const Icon = item?.icon ?? LayoutDashboard;
+                  return <Icon size={23} />;
                 })()}
               </div>
 
@@ -960,8 +962,8 @@ function App() {
                       Backend integration status
                     </p>
                     <p className="mt-1 text-xs leading-5 text-slate-500">
-                      Agent records loaded: {agents.length}. This page does
-                      not execute recovery, quarantine, simulation, or other
+                      Agent records loaded: {agents.length}. This page does not
+                      execute recovery, quarantine, simulation, or other
                       state-changing operations.
                     </p>
                   </div>
@@ -969,7 +971,7 @@ function App() {
               </div>
 
               <button
-                onClick={() => setActivePage('Overview')}
+                onClick={() => setActivePage("Overview")}
                 className="mt-6 rounded-xl border border-cyan-300/20 bg-cyan-300/[0.08] px-4 py-2.5 text-sm text-cyan-200 transition-colors hover:bg-cyan-300/[0.14]"
               >
                 Return to Overview
@@ -983,15 +985,15 @@ function App() {
             <p>
               {health?.version
                 ? `Backend version ${health.version}`
-                : 'Backend version not reported'}
-              {' · '}
-              {backendOnline ? 'Service online' : 'Service status unverified'}
+                : "Backend version not reported"}
+              {" · "}
+              {backendOnline ? "Service online" : "Service status unverified"}
             </p>
           </footer>
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
