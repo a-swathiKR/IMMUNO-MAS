@@ -602,7 +602,7 @@ function App() {
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="text-sm font-medium text-slate-100">
-                          AI-DNA SHIELD
+                          IMMUNO-MAS
                         </p>
                         <p className="mt-1 text-xs text-slate-500">
                           {health?.system || "Resilience backend"}
@@ -981,7 +981,7 @@ function App() {
 
           {/* Footer */}
           <footer className="mt-8 flex flex-col justify-between gap-2 border-t border-white/[0.06] pt-5 text-[11px] text-slate-600 sm:flex-row sm:items-center">
-            <p>AI-DNA SHIELD · IMMUNO-MAS · Resilience Console</p>
+            <p>IMMUNO-MAS · Resilience Console</p>
             <p>
               {health?.version
                 ? `Backend version ${health.version}`

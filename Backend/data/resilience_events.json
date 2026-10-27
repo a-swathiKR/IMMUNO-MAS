@@ -7512,5 +7512,155 @@
         "primary_agent_id": "RA-01",
         "backup_agent_id": "RA-02",
         "reason": "Primary agent RA-01 quarantined."
+    },
+    {
+        "timestamp": "2026-10-27T14:53:03.010874",
+        "kind": "THREAT_CLASSIFIED",
+        "agent_id": "MA-01",
+        "anomaly_type": "PRIVILEGE_ESCALATION",
+        "severity": "CRITICAL",
+        "threat_level": "CRITICAL",
+        "recommended_action": "QUARANTINE_IMMEDIATE",
+        "description": "Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T14:53:03.047692",
+        "kind": "STATE_TRANSITION",
+        "agent_id": "MA-01",
+        "from_state": "HEALTHY",
+        "to_state": "QUARANTINED",
+        "reason": "PRIVILEGE_ESCALATION: Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T14:53:03.113571",
+        "kind": "BACKUP_ACTIVATED",
+        "primary_agent_id": "MA-01",
+        "backup_agent_id": "MA-02",
+        "reason": "Primary agent MA-01 quarantined."
+    },
+    {
+        "timestamp": "2026-10-27T15:15:40.768435",
+        "kind": "THREAT_CLASSIFIED",
+        "agent_id": "MA-01",
+        "anomaly_type": "PRIVILEGE_ESCALATION",
+        "severity": "CRITICAL",
+        "threat_level": "CRITICAL",
+        "recommended_action": "QUARANTINE_IMMEDIATE",
+        "description": "Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T15:15:40.813121",
+        "kind": "STATE_TRANSITION",
+        "agent_id": "MA-01",
+        "from_state": "HEALTHY",
+        "to_state": "QUARANTINED",
+        "reason": "PRIVILEGE_ESCALATION: Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T15:15:41.003839",
+        "kind": "BACKUP_ACTIVATED",
+        "primary_agent_id": "MA-01",
+        "backup_agent_id": "MA-02",
+        "reason": "Primary agent MA-01 quarantined."
+    },
+    {
+        "timestamp": "2026-10-27T15:16:20.335496",
+        "kind": "STATE_TRANSITION",
+        "agent_id": "MA-01",
+        "from_state": "QUARANTINED",
+        "to_state": "HEALTHY",
+        "reason": "Manual recovery triggered via API."
+    },
+    {
+        "timestamp": "2026-10-27T15:16:20.373698",
+        "kind": "RECOVERY_COMPLETED",
+        "agent_id": "MA-01",
+        "recovered_by": "MANUAL"
+    },
+    {
+        "timestamp": "2026-10-27T15:16:20.429301",
+        "kind": "BACKUP_DEACTIVATED",
+        "primary_agent_id": "MA-01",
+        "backup_agent_id": "MA-02"
+    },
+    {
+        "timestamp": "2026-10-27T15:34:13.734133",
+        "kind": "THREAT_CLASSIFIED",
+        "agent_id": "MA-01",
+        "anomaly_type": "PRIVILEGE_ESCALATION",
+        "severity": "CRITICAL",
+        "threat_level": "CRITICAL",
+        "recommended_action": "QUARANTINE_IMMEDIATE",
+        "description": "Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T15:34:13.783340",
+        "kind": "STATE_TRANSITION",
+        "agent_id": "MA-01",
+        "from_state": "HEALTHY",
+        "to_state": "QUARANTINED",
+        "reason": "PRIVILEGE_ESCALATION: Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T15:34:13.831033",
+        "kind": "BACKUP_ACTIVATED",
+        "primary_agent_id": "MA-01",
+        "backup_agent_id": "MA-02",
+        "reason": "Primary agent MA-01 quarantined."
+    },
+    {
+        "timestamp": "2026-10-27T15:34:45.000383",
+        "kind": "THREAT_CLASSIFIED",
+        "agent_id": "MA-01",
+        "anomaly_type": "PRIVILEGE_ESCALATION",
+        "severity": "CRITICAL",
+        "threat_level": "CRITICAL",
+        "recommended_action": "QUARANTINE_IMMEDIATE",
+        "description": "Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T15:35:51.609816",
+        "kind": "STATE_TRANSITION",
+        "agent_id": "MA-01",
+        "from_state": "QUARANTINED",
+        "to_state": "HEALTHY",
+        "reason": "Manual recovery triggered via API."
+    },
+    {
+        "timestamp": "2026-10-27T15:35:51.645846",
+        "kind": "RECOVERY_COMPLETED",
+        "agent_id": "MA-01",
+        "recovered_by": "MANUAL"
+    },
+    {
+        "timestamp": "2026-10-27T15:35:51.699561",
+        "kind": "BACKUP_DEACTIVATED",
+        "primary_agent_id": "MA-01",
+        "backup_agent_id": "MA-02"
+    },
+    {
+        "timestamp": "2026-10-27T16:10:27.604933",
+        "kind": "THREAT_CLASSIFIED",
+        "agent_id": "MA-01",
+        "anomaly_type": "PRIVILEGE_ESCALATION",
+        "severity": "CRITICAL",
+        "threat_level": "CRITICAL",
+        "recommended_action": "QUARANTINE_IMMEDIATE",
+        "description": "Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T16:10:27.656645",
+        "kind": "STATE_TRANSITION",
+        "agent_id": "MA-01",
+        "from_state": "HEALTHY",
+        "to_state": "QUARANTINED",
+        "reason": "PRIVILEGE_ESCALATION: Agent attempted a privileged action outside its role. Immediate quarantine required."
+    },
+    {
+        "timestamp": "2026-10-27T16:10:27.779401",
+        "kind": "BACKUP_ACTIVATED",
+        "primary_agent_id": "MA-01",
+        "backup_agent_id": "MA-02",
+        "reason": "Primary agent MA-01 quarantined."
     }
 ]

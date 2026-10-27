@@ -1,4 +1,3 @@
-
 import { useCallback, useEffect, useState } from "react";
 
 import Sidebar, { type PageId } from "./components/Sidebar";
@@ -18,10 +17,7 @@ import type { Agent, HealthResponse } from "./types";
 
 type JsonObject = Record<string, unknown>;
 
-async function fetchOptional<T>(
-  endpoint: string,
-  fallback: T
-): Promise<T> {
+async function fetchOptional<T>(endpoint: string, fallback: T): Promise<T> {
   try {
     const response = await fetch(`${API_BASE}${endpoint}`);
 
@@ -35,10 +31,7 @@ async function fetchOptional<T>(
   }
 }
 
-function extractArray(
-  value: unknown,
-  keys: string[] = []
-): unknown[] {
+function extractArray(value: unknown, keys: string[] = []): unknown[] {
   if (Array.isArray(value)) {
     return value;
   }
@@ -65,6 +58,28 @@ export default function App() {
   const [anomalies, setAnomalies] = useState<unknown[]>([]);
   const [fingerprints, setFingerprints] = useState<unknown[]>([]);
   const [resilienceStatus, setResilienceStatus] = useState<unknown>(null);
+  const activeBackups: Record<string, string> = (() => {
+    if (
+      !resilienceStatus ||
+      typeof resilienceStatus !== "object" ||
+      !("active_backups" in resilienceStatus)
+    ) {
+      return {};
+    }
+
+    const backups = (resilienceStatus as { active_backups?: unknown })
+      .active_backups;
+
+    if (!backups || typeof backups !== "object" || Array.isArray(backups)) {
+      return {};
+    }
+
+    return Object.fromEntries(
+      Object.entries(backups).filter(
+        (entry): entry is [string, string] => typeof entry[1] === "string",
+      ),
+    );
+  })();
   const [resilienceEvents, setResilienceEvents] = useState<unknown[]>([]);
   const [settings, setSettings] = useState<unknown>(null);
 
@@ -102,19 +117,17 @@ export default function App() {
 
       setLogs(extractArray(logData, ["logs", "events", "data"]));
       setAnomalies(extractArray(anomalyData, ["anomalies", "data"]));
-      setFingerprints(
-        extractArray(fingerprintData, ["fingerprints", "data"])
-      );
+      setFingerprints(extractArray(fingerprintData, ["fingerprints", "data"]));
       setResilienceStatus(resilienceData);
       setResilienceEvents(
-        extractArray(eventData, ["events", "resilience_events", "data"])
+        extractArray(eventData, ["events", "resilience_events", "data"]),
       );
       setSettings(settingsData);
     } catch (error) {
       setApiError(
         error instanceof Error
           ? error.message
-          : "Unable to connect to the backend."
+          : "Unable to connect to the backend.",
       );
     } finally {
       setLoading(false);
@@ -134,16 +147,13 @@ export default function App() {
           <Overview
             agents={agents}
             backendOnline={backendOnline}
+            activeBackups={activeBackups}
           />
         );
 
       case "agents":
         return (
-          <AgentManagement
-            agents={agents}
-            loading={loading}
-            error={apiError}
-          />
+          <AgentManagement agents={agents} loading={loading} error={apiError} />
         );
 
       case "behavior":
@@ -187,37 +197,21 @@ export default function App() {
         );
 
       case "audit":
-        return (
-          <AuditLogs
-            logs={logs}
-            loading={loading}
-            error={apiError}
-          />
-        );
+        return <AuditLogs logs={logs} loading={loading} error={apiError} />;
 
       case "settings":
         return (
-          <Settings
-            settings={settings}
-            loading={loading}
-            error={apiError}
-          />
+          <Settings settings={settings} loading={loading} error={apiError} />
         );
     }
   }
 
   return (
     <div className="min-h-screen bg-[#080B12] text-slate-100">
-      <Sidebar
-        activePage={activePage}
-        onPageChange={setActivePage}
-      />
+      <Sidebar activePage={activePage} onPageChange={setActivePage} />
 
       <div className="min-h-screen min-w-0 md:ml-64">
-        <Header
-          activePage={activePage}
-          backendOnline={backendOnline}
-        />
+        <Header activePage={activePage} backendOnline={backendOnline} />
 
         <main className="min-w-0 px-4 pb-6 pt-3 sm:px-6 lg:px-8">
           {apiError && (
@@ -239,7 +233,7 @@ export default function App() {
           {renderPage()}
 
           <footer className="mt-6 border-t border-slate-800 pt-3 text-xs text-slate-500">
-            AI-DNA SHIELD · Autonomous Multi-Agent Cyber Resilience
+            IMMUNO-MAS · Autonomous Multi-Agent Cyber Resilience
           </footer>
         </main>
       </div>

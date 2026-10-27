@@ -1,4 +1,3 @@
-
 import {
   Activity,
   Shield,
@@ -43,10 +42,7 @@ const navigation = [
   icon: typeof LayoutDashboard;
 }[];
 
-export default function Sidebar({
-  activePage,
-  onPageChange,
-}: SidebarProps) {
+export default function Sidebar({ activePage, onPageChange }: SidebarProps) {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 flex h-screen w-64 flex-col overflow-y-auto border-r border-[#263244] bg-[#0D111B]">
       <div className="flex h-[76px] shrink-0 items-center gap-3 border-b border-[#263244] px-5">
@@ -59,7 +55,7 @@ export default function Sidebar({
             IMMUNO-MAS
           </div>
           <div className="mt-1 text-[10px] tracking-[0.2em] text-slate-500">
-            AI-DNA SHIELD
+            IMMUNO-MAS
           </div>
         </div>
       </div>
@@ -102,7 +98,7 @@ export default function Sidebar({
           </p>
           <div className="mt-3 flex items-center gap-2 text-[10px] text-slate-500">
             <GitBranch size={12} />
-            AI-DNA SHIELD v2.0
+            IMMUNO-MAS v2.0
           </div>
         </div>
       </div>

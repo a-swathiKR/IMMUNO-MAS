@@ -1,4 +1,3 @@
-
 import { Bell, ShieldCheck } from "lucide-react";
 import type { PageId } from "./Sidebar";
 
@@ -18,10 +17,7 @@ const pageTitles: Record<PageId, string> = {
   settings: "Settings",
 };
 
-export default function Header({
-  activePage,
-  backendOnline,
-}: HeaderProps) {
+export default function Header({ activePage, backendOnline }: HeaderProps) {
   return (
     <header className="flex min-h-20 items-center justify-between gap-4 border-b border-slate-800 bg-[#0b101a]/90 px-5 py-4 md:px-8">
       <div>
@@ -29,7 +25,7 @@ export default function Header({
           {pageTitles[activePage]}
         </h2>
         <p className="mt-1 text-xs text-slate-500">
-          AI-DNA SHIELD / Security Console
+          IMMUNO-MAS / Security Console
         </p>
       </div>
 

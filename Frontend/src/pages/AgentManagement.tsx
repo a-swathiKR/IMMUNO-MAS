@@ -1,4 +1,3 @@
-
 import StatusBadge from "../components/StatusBadge";
 import type { Agent } from "../types";
 
@@ -15,18 +14,18 @@ export default function AgentManagement({
 }: AgentManagementProps) {
   const healthyCount = agents.filter((agent) =>
     ["HEALTHY", "ACTIVE", "ONLINE", "OPERATIONAL"].includes(
-      agent.status.toUpperCase()
-    )
+      agent.status.toUpperCase(),
+    ),
   ).length;
 
   const standbyCount = agents.filter(
-    (agent) => agent.status.toUpperCase() === "STANDBY"
+    (agent) => agent.status.toUpperCase() === "STANDBY",
   ).length;
 
   const backupCount = agents.filter(
     (agent) =>
       agent.designation.toUpperCase().includes("BACKUP") ||
-      agent.agent_id.toUpperCase().endsWith("-02")
+      agent.agent_id.toUpperCase().endsWith("-02"),
   ).length;
 
   return (
@@ -37,8 +36,8 @@ export default function AgentManagement({
           Agent Management
         </h2>
         <p className="mt-1 text-sm text-slate-400">
-          Inspect agent identities, roles, availability, and status reported
-          by the AI-DNA SHIELD backend.
+          Inspect agent identities, roles, availability, and status reported by
+          the IMMUNO-MAS backend.
         </p>
       </section>
 
@@ -89,9 +88,7 @@ export default function AgentManagement({
       <section className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
         <div className="flex flex-col gap-2 border-b border-slate-800 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h3 className="font-semibold text-slate-100">
-              Registered Agents
-            </h3>
+            <h3 className="font-semibold text-slate-100">Registered Agents</h3>
             <p className="mt-1 text-xs text-slate-400">
               Live records from GET /agents
             </p>
@@ -111,9 +108,7 @@ export default function AgentManagement({
             <p className="text-sm font-medium text-red-400">
               Unable to load agent data
             </p>
-            <p className="mt-1 break-words text-xs text-slate-400">
-              {error}
-            </p>
+            <p className="mt-1 break-words text-xs text-slate-400">{error}</p>
           </div>
         ) : agents.length === 0 ? (
           <p className="p-5 text-sm text-slate-400">
